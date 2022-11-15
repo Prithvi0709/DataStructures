@@ -10,6 +10,8 @@ public class dfs {
     dfs(int v){
         V = v;
 
+
+        //initializing the adjacency array of linked lists
         this.adj = new LinkedList[V];
         for (int i = 0; i < V; i++) {
             this.adj[i] = new LinkedList<>();
@@ -18,6 +20,7 @@ public class dfs {
     }
 
 
+    //Function to add edges
     void addEdge(int v, int w){
         adj[v].add(w);
     }
@@ -29,6 +32,7 @@ public class dfs {
         dfsUtil(v,visited);
     }
 
+    //Utility function for dfs
     private void dfsUtil(int v,boolean[] visited) {
 
         visited[v] = true;
@@ -42,8 +46,10 @@ public class dfs {
     }
 
     public static void main(String[] args) {
+        // New object containing all the methods and functions of the graph
         dfs d = new dfs(5);
 
+        // Adding edges
         d.addEdge(0,1);
         d.addEdge(1,2);
         d.addEdge(2,3);
@@ -51,6 +57,7 @@ public class dfs {
         d.addEdge(4,0);
         d.addEdge(0,2);
 
+        // Calling dfs function
         d.depthFirstSearch(0);
     }
 
